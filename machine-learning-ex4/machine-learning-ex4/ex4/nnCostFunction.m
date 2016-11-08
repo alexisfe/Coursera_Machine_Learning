@@ -65,13 +65,11 @@ Theta2_grad = zeros(size(Theta2));
 Theta1 = Theta1(:, 2:end)';
 Theta2 = Theta2(:, 2:end)';
 
-a2 = sigmoid(X*Theta1);
-h0 = sigmoid(a2*Theta2);
+h1 = sigmoid(X*Theta1);
+h2 = sigmoid(X*Theta2);
 
-%Theta1_grad = (1/m)*sum(-y'*log(h1) - (1-y)'*log(1-h1)); 
-%Theta2_grad = (1/m)*sum(-y'*log(h2) - (1-y)'*log(1-h2)); 
-
-J = (1/m)*sum(-y'*log(h0) - (1-y)'*log(1-h0)); 
+Theta1_grad = (1/m)*sum(-y'*log(h1) - (1-y)'*log(1-h1)); 
+Theta2_grad = (1/m)*sum(-y'*log(h2) - (1-y)'*log(1-h2)); 
 
 % -------------------------------------------------------------
 
